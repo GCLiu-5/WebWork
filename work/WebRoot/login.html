@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>用户登录</title>
+		<link href="css/login.css" rel="stylesheet"/>
+		<style type="text/css">
+			.body{
+				background-image: url(images/background.jpg);
+				background-repeat: no-repeat ;
+				background-size: 100%;
+			}
+			.logo{
+				margin-left: 8%;
+				margin-top: 3%;
+			}
+			img{
+				margin: 30px;
+				cursor: pointer;
+			}
+		</style>
+
+    </head> 
+    <body class="body">
+		
+		<div class="logo">
+			<img src="images/logo.png"/>
+		</div>
+		
+		<div id="loginForm">
+			<form action="register.do" method="post" id="form">
+				<p id="title">账号注册</p>
+			    <p>
+					<label>&nbsp;&nbsp;
+					<input type="tel" id="phone" name="phone" placeholder="手机号码" autocomplete="off" value="" onchange="phoneError()"/>
+					</label>
+					<label id="phoneError"></label>
+			    </p>
+			    <p>
+					<label>&nbsp;&nbsp;
+						<input type="text" id="checkCode" name="checkCode" placeholder="校验码" autocomplete="off"/>
+						<input id="getCheckCode" name="getCheckCode"  onclick="getCode(this);" type="button" value="获取验证码"/>
+					</label>
+			    </p>
+				<p>
+					<label>&nbsp;&nbsp;
+						<input type="password" id="password1" name="password1" placeholder="登陆密码" autocomplete="off" onchange="password1Error()"/>
+					</label>
+					<label id="password1Error"></label>
+				</p>
+				<p>
+					<label>&nbsp;&nbsp;
+						<input type="password" id="password2" name="password2" placeholder="确认密码" autocomplete="off" onchange="password2Error()"/>
+					</label>
+					<label id="password2Error"></label>
+				</p>
+				<p style="font-size: 5px;">&nbsp;&nbsp;
+					<label>
+						<input type="checkbox" id="checkBox" value="uncheck" onclick="this.value=(this.value=='uncheck')?'checked':'uncheck'"/>已阅读并同意
+						<a href="">《用户协议》</a>
+					</label>
+				</p>
+			    <p>&nbsp;&nbsp;
+					<label>
+						<input type="button" id="register" name="register" onclick="mySubmit()" value="立即注册"/>
+					</label>
+			    </p>
+				<p id="login">
+					<font ><a href="">立即登陆></a></font>
+				</p>
+			</form>
+		</div>
+        
+    </body>
+	<script src="js/login.js"></script>
+	 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</html>
